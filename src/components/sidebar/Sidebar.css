@@ -1,0 +1,24 @@
+.sidebar-wrapper {
+  margin-right: 42px;
+  border-right: 1px solid #ddd;
+  margin-right: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.nav-pills .nav-link {
+  color: black;
+}
+
+.nav-pills .nav-item:focus,
+.nav-pills .nav-item:hover {
+  background: #29b71285;
+  color: black;
+  border-radius: unset;
+}
+
+.nav-pills .nav-item.active {
+  background: #29b712a8;
+  color: black;
+  border-radius: unset;
+}
