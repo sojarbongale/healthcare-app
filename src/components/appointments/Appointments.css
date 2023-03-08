@@ -8,7 +8,7 @@
 .appointment-type-wrapper .appointments-type,
 .appointment-wrapper .appointments-section {
   padding: 8px 28px;
-  display: inline;
+  /* display: inline; */
   font-family: "Source Serif 4";
   font-size: 12px;
   font-weight: 400;
@@ -16,9 +16,18 @@
   letter-spacing: 0em;
   border-radius: 5px;
 }
+.appointment-type-wrapper .appointments-type {
+  cursor: pointer;
+}
 
 .appointment-wrapper .appointments-section-title {
   padding: 22px 16px;
+  text-align: left;
+  font-family: Open Sans;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
   text-align: left;
 }
 
@@ -32,6 +41,11 @@
   color: #4469ba;
 }
 
+.appointment-wrapper .medical-record,
+.appointment-wrapper .no-appointment {
+  font-size: 16px;
+  color: #242831;
+}
 /* apointments css end */
 /* appointment details css  start*/
 
@@ -50,6 +64,7 @@
   font-weight: 400;
   line-height: 17px;
   letter-spacing: 0em;
+  color: #6b6b6b;
 }
 .patient-treatment-head {
   font-family: Open Sans;
@@ -58,6 +73,7 @@
   line-height: 17px;
   letter-spacing: 0em;
   text-align: center;
+  color: #6b6b6b;
 }
 .patient-treatment-data .patient-treatment-typeName {
   font-family: Open Sans;
@@ -79,3 +95,36 @@
   text-align: left;
 }
 /* appointment details css  end*/
+
+@media screen and (min-device-width: 320px) and (max-device-width: 767px) {
+  .appintment-section-wrapper {
+    margin: 0;
+  }
+  .appointment-wrapper {
+    margin: 0;
+  }
+  .appointment-wrapper .appointments-section-title {
+    text-align: center;
+    padding: 16px;
+  }
+  .previous-treatment {
+    text-align: center;
+    padding-top: 0;
+    margin-bottom: 20px;
+  }
+  .appointment-data > div {
+    display: block !important;
+    padding-bottom: 20px;
+  }
+
+  .appointment-data > div > div {
+    border-bottom: 1px solid #ddd;
+  }
+  .patient-appointment-data .patient-appointment-dtl,
+  .patient-appointment-data .patient-appointment-time {
+    text-align: center;
+  }
+  .appointment-data .note-wrapper {
+    padding: 20px;
+  }
+}

@@ -2,11 +2,13 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {
   fetchUpcommingAppointments,
   fetchPastAppointments,
-} from "./AppointmentsAPI";
+} from "./appointmentAPI";
 
 const initialState = {
   upcommingAppointments: [],
   pastAppointments: [],
+  upcommingAppointmentsCount: 0,
+  pastAppointmentsCount: 0,
   status: "idle",
   error: null,
 };
@@ -16,7 +18,7 @@ export const fetchUpcommingAppointmentsAsync = createAsyncThunk(
   async () => {
     const response = await fetchUpcommingAppointments();
     // The value we return becomes the `fulfilled` action payload
-    return response.data;
+    return response;
   }
 );
 
@@ -25,10 +27,15 @@ export const fetchPastAppointmentsAsync = createAsyncThunk(
   async () => {
     const response = await fetchPastAppointments();
     // The value we return becomes the `fulfilled` action payload
-    return response.data;
+    return response;
   }
 );
 
+const getAppointmentsCount = (appointmentArray) => {
+  let count = 0;
+  appointmentArray.forEach((data) => (count += data.treatments.length));
+  return count;
+};
 export const appointmentSlice = createSlice({
   name: "Appointment",
   initialState,
@@ -42,6 +49,7 @@ export const appointmentSlice = createSlice({
       .addCase(fetchUpcommingAppointmentsAsync.fulfilled, (state, action) => {
         state.status = "success";
         state.upcommingAppointments = action.payload;
+        state.upcommingAppointmentsCount = getAppointmentsCount(action.payload);
       })
       .addCase(fetchUpcommingAppointmentsAsync.rejected, (state, action) => {
         state.status = "failed";
@@ -55,6 +63,7 @@ export const appointmentSlice = createSlice({
       .addCase(fetchPastAppointmentsAsync.fulfilled, (state, action) => {
         state.status = "success";
         state.pastAppointments = action.payload;
+        state.pastAppointmentsCount = getAppointmentsCount(action.payload);
       })
       .addCase(fetchPastAppointmentsAsync.rejected, (state, action) => {
         state.status = "failed";

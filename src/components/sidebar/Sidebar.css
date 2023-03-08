@@ -12,7 +12,7 @@
 
 .nav-pills .nav-item:focus,
 .nav-pills .nav-item:hover {
-  background: #29b71285;
+  background: #29b71242;
   color: black;
   border-radius: unset;
 }
@@ -22,3 +22,42 @@
   color: black;
   border-radius: unset;
 }
+.nav-pills .nav-item .nav-link .link-text {
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0em;
+}
+@media screen and (min-device-width: 320px) and (max-device-width: 767px) {
+  .sidebar-wrapper .logo {
+    width: 30% !important;
+    margin-bottom: 10px;
+  }
+  .sidebar-wrapper .nav-item.active,
+  .sidebar-wrapper .nav-item {
+    padding: 0px;
+    margin: 0px;
+    width: 30%;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin-left: 35%;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (min-device-width: 767px) {
+  .sidebar-wrapper .logo,
+  .nav-item.active,
+  .nav-item {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+/* @media only screen and (max-width: 767px) {
+ 
+} */
+/* @media only screen and (max-width: 1024px) {
+  
+}
+ */

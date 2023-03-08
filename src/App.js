@@ -1,22 +1,31 @@
 import React from "react";
-import "./App.css";
 import Sidebar from "./components/sidebar/Sidebar";
 import { Route, Routes } from "react-router-dom";
 import PageNotFound from "./components/page-not-found/PageNotFound";
-import Reports from "./components/reports/Reports";
 import Patient from "./components/patient/Patient";
+import AddNewPatient from "./components/patient/AddNewPatient";
+import Files from "./components/files/Files";
+import Upload from "./components/upload/Upload";
+import Setting from "./components/setting/Setting";
+import Report from "./components/report/Report";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <div class="row m-0">
-        <div class="col-1 d-flex flex-column flex-shrink-0 sidebar-wrapper">
+      <div className="row m-0">
+        <div className="col-md-1 col-sm-12 col-xs-12 d-flex flex-column flex-shrink-0 sidebar-wrapper">
           <Sidebar />
         </div>
-        <div class="col-md-11">
+        <div className="col-sm-12 col-xs-12  col-md-11 ">
           <Routes>
+            <Route path="/" element={<Patient />} />
             <Route path="/patient" element={<Patient />} />
-            <Route path="/reports" element={<Reports />} />
+            <Route path="/add-new-patient" element={<AddNewPatient />} />
+            <Route path="/files-data" element={<Files />} />
+            <Route path="/upload-data" element={<Upload />} />
+            <Route path="/report" element={<Report />} />
+            <Route path="/setting" element={<Setting />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </div>

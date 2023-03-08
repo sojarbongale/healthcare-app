@@ -3,18 +3,16 @@ import PatientDocuments from "./PatientDocuments";
 import PatientInfo from "./PatientInfo";
 import "./PatientDocuments.css";
 import Appointments from "../appointments/Appointments";
+
 const Patient = () => {
   return (
     <div>
       <PatientInfo />
       <div className="row">
-        <div class="col-md-3">
+        <div className="col-md-3">
           <PatientDocuments />
         </div>
-        <div
-          class="col-md-8"
-          style={{ marginLeft: "40px", marginTop: "-58px" }}
-        >
+        <div className="col-md-8 section-wrapper">
           <Appointments />
         </div>
       </div>

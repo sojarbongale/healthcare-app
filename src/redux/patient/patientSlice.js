@@ -4,7 +4,7 @@ import { fetchPatientDetails } from "./patientAPI";
 const initialState = {
   patientDetails: null,
   status: "idle",
-  error: null,
+  error: null
 };
 
 export const fetchPatientDetailsAsync = createAsyncThunk(
@@ -12,7 +12,7 @@ export const fetchPatientDetailsAsync = createAsyncThunk(
   async () => {
     const response = await fetchPatientDetails();
     // The value we return becomes the `fulfilled` action payload
-    return response.data;
+    return response;
   }
 );
 

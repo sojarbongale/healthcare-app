@@ -7,7 +7,7 @@ export function fetchUpcommingAppointments() {
           {
             patientId: "123",
             appointmentId: "1",
-            appointmentName: "Root Canal Treatment",
+            appointmenType: "Root Canal Treatment",
             appointmentDate: "26 Feb'23",
             appointmentStatus: "upcomming",
             treatments: [
@@ -45,7 +45,7 @@ export function fetchPastAppointments() {
           {
             patientId: "123",
             appointmentId: "1",
-            appointmentName: "Root Canal Treatment",
+            appointmenType: "Root Canal Treatment",
             appointmentDate: "26 Feb'23",
             appointmentStatus: "past",
             treatments: [
@@ -71,7 +71,25 @@ export function fetchPastAppointments() {
                 treatementDate: "07 Feb ‘23",
                 treatementStartTime: "11:00",
                 treatementEndTime: "12:30",
-                treatementType: "Checkup",
+                treatementType: "Fillings",
+                dentistName: "Drg. Adam H.",
+                nurseName: "Jessicamila",
+                noteURL: "",
+              },
+            ],
+          },
+          {
+            patientId: "123",
+            appointmentId: "1",
+            appointmenType: "X-Ray Treatment",
+            appointmentDate: "26 Feb'23",
+            appointmentStatus: "past",
+            treatments: [
+              {
+                treatementDate: "20 Feb ‘23",
+                treatementStartTime: "04:00",
+                treatementEndTime: "05:00",
+                treatementType: "X-Ray",
                 dentistName: "Drg. Adam H.",
                 nurseName: "Jessicamila",
                 noteURL: "",
